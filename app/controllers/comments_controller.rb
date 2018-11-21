@@ -4,11 +4,11 @@ class CommentsController < ApplicationController
 
     @comment = @food.comments.create(comment_params)
 
-    redirect_to food_path
+    redirect_to food_path(@food)
   end
 
   private
     def comment_params
-      params.require(:comment).permit(:user,:title,:body)
+      params.require(:comment).permit(:user,:title,:body,:food)
     end
 end
