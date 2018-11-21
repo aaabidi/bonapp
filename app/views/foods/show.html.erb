@@ -20,5 +20,44 @@
   <%= @food.hall %>
 </p>
 
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+<p>
+  <strong>User:</strong>
+  <%= comment.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= comment.title %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+<% end %>
+
+<%= form_for([@food,@article.comments.build]) do f %>
+<p>
+  <%= f.label :user %> <br />
+  <f.text_field :user %>
+</p>
+
+<p>
+  <%= f.label :title %> <br />
+  <f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :body %> <br />
+  <f.text_area :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+<% end %>  
+
 <%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>
