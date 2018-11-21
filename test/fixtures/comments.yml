@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  rating: 1
   body: MyText
-  user: one
   food: one
+  user: one
 
 two:
-  title: MyString
+  rating: 1
   body: MyText
-  user: two
   food: two
+  user: two

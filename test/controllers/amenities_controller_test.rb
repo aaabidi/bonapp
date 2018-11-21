@@ -17,7 +17,7 @@ class AmenitiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create amenity" do
     assert_difference('Amenity.count') do
-      post amenities_url, params: { amenity: { name: @amenity.name, user_id: @amenity.user_id } }
+      post amenities_url, params: { amenity: { hall_id: @amenity.hall_id, name: @amenity.name, status: @amenity.status, user_id: @amenity.user_id } }
     end
 
     assert_redirected_to amenity_url(Amenity.last)
@@ -34,7 +34,7 @@ class AmenitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update amenity" do
-    patch amenity_url(@amenity), params: { amenity: { name: @amenity.name, user_id: @amenity.user_id } }
+    patch amenity_url(@amenity), params: { amenity: { hall_id: @amenity.hall_id, name: @amenity.name, status: @amenity.status, user_id: @amenity.user_id } }
     assert_redirected_to amenity_url(@amenity)
   end
 

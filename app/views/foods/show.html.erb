@@ -12,12 +12,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @food.user %>
+  <%= @food.user.name %>
 </p>
 
 <p>
   <strong>Hall:</strong>
-  <%= @food.hall.name %>
+  <%= @food.hall %>
 </p>
 
 <h2>Comments</h2>
@@ -28,8 +28,8 @@
   </p>
 
   <p>
-    <strong>Title:</strong>
-    <%= comment.title %>
+    <strong>Rating:</strong>
+    <%= comment.rating %>
   </p>
 
   <p>
@@ -41,17 +41,17 @@
 <%= form_for([@food,@food.comments.build]) do |f| %>
   <p>
     <%= f.label :user %> <br />
-    <f.text_field :user %>
+    <%= f.text_field :user %>
   </p>
 
   <p>
-    <%= f.label :title %> <br />
-    <f.text_field :title %>
+    <%= f.label :rating %> <br />
+    <%= f.number_field :rating, in: 1..5, step: 1 %>
   </p>
 
   <p>
     <%= f.label :body %> <br />
-    <f.text_area :body %>
+    <%= f.text_area :body %>
   </p>
 
   <p>
@@ -60,4 +60,5 @@
 <% end %>
 
 <%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>
+<%= link_to 'Back to Food Item', foods_path %> |
+<%= link_to 'Back to Dining Hall', halls_path %>

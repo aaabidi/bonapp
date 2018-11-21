@@ -10,21 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_154716) do
+ActiveRecord::Schema.define(version: 2018_11_21_175544) do
 
   create_table "amenities", force: :cascade do |t|
     t.string "name"
+    t.string "status"
     t.integer "user_id"
+    t.integer "hall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["hall_id"], name: "index_amenities_on_hall_id"
     t.index ["user_id"], name: "index_amenities_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "title"
+    t.integer "rating"
     t.text "body"
-    t.integer "user_id"
     t.integer "food_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_comments_on_food_id"

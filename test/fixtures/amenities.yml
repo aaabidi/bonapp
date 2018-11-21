@@ -2,8 +2,12 @@
 
 one:
   name: MyString
+  status: MyString
   user: one
+  hall: one
 
 two:
   name: MyString
+  status: MyString
   user: two
+  hall: two

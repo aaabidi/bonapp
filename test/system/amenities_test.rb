@@ -14,7 +14,9 @@ class AmenitiesTest < ApplicationSystemTestCase
     visit amenities_url
     click_on "New Amenity"
 
+    fill_in "Hall", with: @amenity.hall_id
     fill_in "Name", with: @amenity.name
+    fill_in "Status", with: @amenity.status
     fill_in "User", with: @amenity.user_id
     click_on "Create Amenity"
 
@@ -26,7 +28,9 @@ class AmenitiesTest < ApplicationSystemTestCase
     visit amenities_url
     click_on "Edit", match: :first
 
+    fill_in "Hall", with: @amenity.hall_id
     fill_in "Name", with: @amenity.name
+    fill_in "Status", with: @amenity.status
     fill_in "User", with: @amenity.user_id
     click_on "Update Amenity"
 
