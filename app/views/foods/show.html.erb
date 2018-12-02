@@ -38,7 +38,7 @@
   </p>
 <% end %>
 
-<%= form_for([@food,@food.comments.build]) do |f| %>
+<%= form_for([@food,@food.comments.new]) do |f| %>
   <p>
     <%= f.label :user %> <br />
     <%= f.text_field :user %>
