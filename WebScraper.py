@@ -1,19 +1,37 @@
-
+import json
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
-#fooditems = []
+# Set link for dining halls
+friblyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/")
+luitnerUrl = urlopen("https://case.cafebonappetit.com/cafe/leutner-cafe/")
 
-html = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/")
+# parse the html using beautiful soup and store in variable
+friblySoup = BeautifulSoup(friblyUrl, "html.parser")
+luitnerSoup = BeautifulSoup(luitnerUrl, "html.parser")
 
-# parse the html using beautiful soup and store in variable `soup`
-soup = BeautifulSoup(html, "html.parser")
+#Parse through page for food items
+friblyFoodItems = friblySoup.find_all('button',class_='h4 site-panel__daypart-item-title')
+luitnerFoodItems = luitnerSoup.find_all('button',class_='h4 site-panel__daypart-item-title')
 
+#Create Dictionarys to store formated food items
+friblyDict = {}
+luitnerDict = {}
 
-fooditems = soup.find_all('button',class_='h4 site-panel__daypart-item-title')
+#Move food items to dictionarys
+for x in range(len(friblyFoodItems)):
+    friblyDict[x]=friblyFoodItems[x].text.strip()
 
-for x in fooditems:
-    print (x.text.strip())
+for x in range(len(luitnerFoodItems)):
+    luitnerDict[x]=luitnerFoodItems[x].text.strip()
+
+#Dump dictionaries to json files
+with open('friblyItems.json', 'w') as fp:
+    json.dump(friblyDict, fp, indent=4)
+
+with open('luitnerItems.json', 'w') as fp:
+    json.dump(luitnerDict, fp, indent=4)
+
 
 
 
