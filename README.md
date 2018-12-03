@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application requires the use of Ruby v2.3 or higher and Rails version 3.
 
-Things you may want to cover:
+In order to run the application:
+  Go into the project folder
+  Run bundle install -> installs dependencies
+  Run 'rake db:migrate' in the terminal -> creates database
+  Run 'rails s' in terminal -> runs web server
+  Then navigate to https://localhost:3000
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The application can then be used on the local machine in the browser.
