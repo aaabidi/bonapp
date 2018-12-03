@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'foods/name:string'
+  get 'foods/description:text'
+  get 'foods/has_many:comments'
+  get 'foods/references:halls'
   resources :amenities
   resources :amenities do
     resources :statuses
