@@ -1,46 +1,125 @@
 import json
 import re
-#import str
-
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
-# Set link for dining halls
+#Create Dictionarys for meals
+friblyMeals = {}
+friblyMealNames = {}
+luitnerMeals = {}
+luitnerMealNames = {}
+
+# Set links for dining halls
 friblyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/")
+#friblyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/2018-12-02/") #sunday website
 luitnerUrl = urlopen("https://case.cafebonappetit.com/cafe/leutner-cafe/")
 
-# parse the html using beautiful soup and store in variable
+#Create Soups
 friblySoup = BeautifulSoup(friblyUrl, "html.parser")
 luitnerSoup = BeautifulSoup(luitnerUrl, "html.parser")
 
-#Parse through page for food items
-friblyFoodItems = friblySoup.find_all('button',class_='h4 site-panel__daypart-item-title')
-luitnerFoodItems = luitnerSoup.find_all('button',class_='h4 site-panel__daypart-item-title')
+#Get Breakfast
+friblyBreakfast = friblySoup.find('section', id='breakfast') #Finds just breakfast section
+if friblyBreakfast is None: #Checks if breakfast is served
+    print ("No Breakfast")
+else:
+    friblyBreakfastFood = friblyBreakfast.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    friblyMeals[1] = friblyBreakfastFood #Adds breakfast to list of meals
+    friblyMealNames[1] = "Breakfast" #Adds breakfast to list of meal names
 
-#Create Dictionarys to store formated food items
-friblyDict = {}
-luitnerDict = {}
+luitnerBreakfast = luitnerSoup.find('section', id='breakfast') #Finds just breakfast section
+if luitnerBreakfast is None: #Checks if breakfast is served
+    print ("No Breakfast")
+else:
+    luitnerBreakfastFood = luitnerBreakfast.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    luitnerMeals[1] = luitnerBreakfastFood #Adds breakfast to list of meals
+    luitnerMealNames[1] = "Breakfast" #Adds breakfast to list of meal names
 
-#Move and format food items to dictionarys
-for x in range(len(friblyFoodItems)):
-    food = friblyFoodItems[x].text.strip() #formats and removes white space
-    food = re.sub('\[.*?\]', '', food) #removes farm information
-    food = food.replace("\u00f1", "n") #fixes n character
-    friblyDict[x] = food #add item to dictionary
+#Get Brunch
+friblyBrunch = friblySoup.find('section', id='brunch') #Finds just brunch section
+if friblyBrunch is None: #Checks if brunch is served
+    print ("No Brunch")
+else:
+    friblyBrunchFood = friblyBrunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    friblyMeals[1] = friblyBrunchFood  #Adds Brunch to list of meals
+    friblyMealNames[1] = "Brunch" #Adds brunch to list of meal names
 
-for x in range(len(luitnerFoodItems)):
-    food = luitnerFoodItems[x].text.strip() #formats and removes white space
-    food = re.sub('\[.*?\]', '', food) #removes farm information
-    food = food.replace("\u00f1", "n") #fixes n character
-    luitnerDict[x] = food #add item to dictionary
+luitnerBrunch = luitnerSoup.find('section', id='brunch') #Finds just brunch section
+if luitnerBrunch is None: #Checks if brunch is served
+    print ("No Brunch")
+else:
+    luitnerBrunchFood = luitnerBrunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    luitnerMeals[1] = luitnerBrunchFood  #Adds Brunch to list of meals
+    luitnerMealNames[1] = "Brunch" #Adds brunch to list of meal names
 
-#Dump dictionaries to json files
-with open('friblyItems.json', 'w') as fp:
-    json.dump(friblyDict, fp, indent=4)
+#Get Lunch
+friblyLunch = friblySoup.find('section', id='lunch') #Finds just lunch section
+if friblyLunch is None: #Checks if Lunch is served
+    print ("No Lunch")
+else:
+    friblyLunchFood = friblyLunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    friblyMeals[2] = friblyLunchFood  #Adds Lunch to list of meals
+    friblyMealNames[2] = "Lunch" #Adds Lunch to list of meal names
 
-with open('luitnerItems.json', 'w') as fp:
-    json.dump(luitnerDict, fp, indent=4)
+luitnerLunch = luitnerSoup.find('section', id='lunch') #Finds just lunch section
+if luitnerLunch is None: #Checks if Lunch is served
+    print ("No Lunch")
+else:
+    luitnerLunchFood = luitnerLunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    luitnerMeals[2] = luitnerLunchFood  #Adds Lunch to list of meals
+    luitnerMealNames[2] = "Lunch" #Adds Lunch to list of meal names
 
-test = "This pizza is 6\""
-#test = test.replace("\"","-in")
-print (test)
+#Get Dinner
+friblyDinner = friblySoup.find('section', id='dinner') #Finds just dinner section
+friblyDinnerFood = friblyDinner.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+if len(friblyMeals) == 2:  #Adds Dinner to list of meals, but also checks to see if there was brunch or not
+    friblyMeals[3] = friblyDinnerFood
+    friblyMealNames[3] = "Dinner" 
+else:
+    friblyMeals[2] = friblyDinnerFood
+    friblyMealNames[2] = "Dinner" 
+
+luitnerDinner = luitnerSoup.find('section', id='dinner') #Finds just dinner section
+luitnerDinnerFood = luitnerDinner.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+if len(luitnerMeals) == 2:  #Adds Dinner to list of meals, but also checks to see if there was brunch or not
+    luitnerMeals[3] = luitnerDinnerFood
+    luitnerMealNames[3] = "Dinner" 
+else:
+    luitnerMeals[2] = luitnerDinnerFood
+    luitnerMealNames[2] = "Dinner" 
+
+#Create A Json file for all of the meals at fribly 
+for mealIndex, meal in friblyMeals.items():
+
+    #Create Dictionary of foods
+    friblyDict = {}
+
+    #Move and format food items to dictionarys
+    for x in range(len(meal)):
+        food = meal[x].text.strip() #formats and removes white space
+        food = re.sub('\[.*?\]', '', food) #removes farm information
+        food = food.replace("\u00f1", "n") #fixes Nne character
+        friblyDict[x] = food #add item to dictionary
+
+    #Dump dictionaries to json files
+    with open('fribly'+friblyMealNames[mealIndex]+'.json', 'w') as fp:
+        json.dump(friblyDict, fp, indent=4)
+    
+#Create A Json file for all of the meals at luitner 
+for mealIndex, meal in luitnerMeals.items():
+
+    #Create Dictionary of foods
+    luitnerDict = {}
+
+    #Move and format food items to dictionarys
+    for x in range(len(meal)):
+        food = meal[x].text.strip() #formats and removes white space
+        food = re.sub('\[.*?\]', '', food) #removes farm information
+        food = food.replace("\u00f1", "n") #fixes Nne character
+        luitnerDict[x] = food #add item to dictionary
+
+    #Dump dictionaries to json files
+    with open('luitner'+luitnerMealNames[mealIndex]+'.json', 'w') as fp:
+        json.dump(luitnerDict, fp, indent=4)
+
+
