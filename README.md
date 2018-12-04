@@ -4,6 +4,7 @@
 - Ruby v2.3 or higher 
 - Rails version 3
 - Python 3.X or higher
+- BeautifulSoup 4
 
 ## In order to run the application:
 1. Go into the project folder
