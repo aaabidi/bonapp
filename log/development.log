@@ -1,0 +1,748 @@
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:04:11 -0500
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/bfbfbc5f447ffc21/variables" for 127.0.0.1 at 2018-12-05 09:04:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateUsers (20181121154157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154157"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateHalls (20181121154216)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "halls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154216"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateFoods (20181121154251)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "foods" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "user_id" integer, "hall_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_541e2e5c7b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_a4c0cabe74"
+FOREIGN KEY ("hall_id")
+  REFERENCES "halls" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_foods_on_user_id" ON "foods" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_foods_on_hall_id" ON "foods" ("hall_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154251"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateStatuses (20181121154716)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "statuses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "status" varchar, "amenity_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_fd711fd62f"
+FOREIGN KEY ("amenity_id")
+  REFERENCES "amenities" ("id")
+, CONSTRAINT "fk_rails_b29739edee"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_statuses_on_amenity_id" ON "statuses" ("amenity_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_statuses_on_user_id" ON "statuses" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154716"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateComments (20181121165814)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "body" text, "food_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a0d6fb3255"
+FOREIGN KEY ("food_id")
+  REFERENCES "foods" ("id")
+, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_food_id" ON "comments" ("food_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121165814"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateAmenities (20181121175544)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "amenities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "status" varchar, "user_id" integer, "hall_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_d7ed585fbf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1122b89d0e"
+FOREIGN KEY ("hall_id")
+  REFERENCES "halls" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX "index_amenities_on_user_id" ON "amenities" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_amenities_on_hall_id" ON "amenities" ("hall_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121175544"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-05 14:04:22.525375"], ["updated_at", "2018-12-05 14:04:22.525375"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:04:32 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (34.7ms)
+  Rendered foods/new.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 1090ms (Views: 1018.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:05:24 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (6.7ms)
+  Rendered foods/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 4395ms (Views: 4392.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:08:46 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (5.2ms)
+  Rendered foods/new.html.erb within layouts/application (347.1ms)
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `simple_form_for' for #<#<Class:0x00007fd44de47ea0>:0x00007fd454ce0948>
+Did you mean?  simple_format:
+  app/views/foods/new.html.erb:5:in `_app_views_foods_new_html_erb___3397970534293547871_70274966292880'
+
+Started POST "/__better_errors/0c300bbc3699dec5/variables" for 127.0.0.1 at 2018-12-05 09:08:47 -0500
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:10:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Processing by FoodsController#new as HTML
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:10:43 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (17.5ms)
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (3.7ms)
+  Rendered foods/new.html.erb within layouts/application (163.2ms)
+  Rendered foods/new.html.erb within layouts/application (197.0ms)
+Completed 200 OK in 1264ms (Views: 1262.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1413ms (Views: 1368.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-05 09:11:41 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 63ms (Views: 58.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-12-05 09:11:46 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.2ms)
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 57ms (Views: 46.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-05 09:11:53 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mLuf3tiR8wkNDxGgehhNtIKSzvJ/5QJrqFOPUZaRRfrD8UJD/kSSDUmuzSC7dUT7g10x/+4wWsSMnXZsSVKClQ==", "user"=>{"name"=>"Ammar", "email"=>"email", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ammar"], ["email", "email"], ["password", "password"], ["created_at", "2018-12-05 14:11:53.849902"], ["updated_at", "2018-12-05 14:11:53.849902"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 10ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-12-05 09:11:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 95ms (Views: 77.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-12-05 09:11:55 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.2ms)
+  Rendered users/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-05 09:11:57 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-12-05 09:12:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 66ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-05 09:12:15 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GJAL+Zi1TMRoVFgg7+quO9uIiq/Ph8WYCiB1DHiFwxxD2tZkvmAtwCz1hKAuh6d02kd1ol5SnTcu7owxp0YEcw==", "user"=>{"name"=>"Nick", "email"=>"email", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Nick"], ["email", "email"], ["password", "password"], ["created_at", "2018-12-05 14:12:15.278447"], ["updated_at", "2018-12-05 14:12:15.278447"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-12-05 09:12:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 66ms (Views: 61.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-05 09:12:17 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/halls" for 127.0.0.1 at 2018-12-05 09:12:27 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 96ms (Views: 89.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/halls/new" for 127.0.0.1 at 2018-12-05 09:12:30 -0500
+Processing by HallsController#new as HTML
+  Rendering halls/new.html.erb within layouts/application
+  Rendered halls/_form.html.erb (3.0ms)
+  Rendered halls/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 63ms (Views: 53.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/halls" for 127.0.0.1 at 2018-12-05 09:12:33 -0500
+Processing by HallsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oCOxaqo1vZovs0lzr/lWqUAuHjvWBllNipQVbcMk4fTu57I4DiJ1UfD1S+9LcCeeAV7Zx8DyNv+qb63rDid5Pw==", "hall"=>{"name"=>"Luetner"}, "commit"=>"Create Hall"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mHall Create (0.4ms)[0m  [1m[32mINSERT INTO "halls" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Luetner"], ["created_at", "2018-12-05 14:12:33.221176"], ["updated_at", "2018-12-05 14:12:33.221176"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Redirected to http://localhost:3000/halls/1
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-05 09:12:33 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."hall_id" = ?[0m  [["hall_id", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mAmenity Load (0.5ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities" WHERE "amenities"."hall_id" = ?[0m  [["hall_id", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/show.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 99ms (Views: 93.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/halls" for 127.0.0.1 at 2018-12-05 09:12:34 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.1ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/halls/new" for 127.0.0.1 at 2018-12-05 09:12:36 -0500
+Processing by HallsController#new as HTML
+  Rendering halls/new.html.erb within layouts/application
+  Rendered halls/_form.html.erb (1.4ms)
+  Rendered halls/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/halls" for 127.0.0.1 at 2018-12-05 09:12:39 -0500
+Processing by HallsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zVtmaiIDAH0uU2Pfut+thnAXpzWkYavGbGuPVrJ4nWiDn2U4hhTItvEVYUNeVtyxMWdgybKVxHRMkDfQf3sFow==", "hall"=>{"name"=>"Fribley"}, "commit"=>"Create Hall"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mHall Create (0.6ms)[0m  [1m[32mINSERT INTO "halls" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fribley"], ["created_at", "2018-12-05 14:12:39.045814"], ["updated_at", "2018-12-05 14:12:39.045814"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Redirected to http://localhost:3000/halls/2
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/halls/2" for 127.0.0.1 at 2018-12-05 09:12:39 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."hall_id" = ?[0m  [["hall_id", 2]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities" WHERE "amenities"."hall_id" = ?[0m  [["hall_id", 2]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 67ms (Views: 62.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/halls" for 127.0.0.1 at 2018-12-05 09:12:40 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-05 09:12:43 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."hall_id" = ?[0m  [["hall_id", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities" WHERE "amenities"."hall_id" = ?[0m  [["hall_id", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 49.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:12:50 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (2.6ms)
+  Rendered foods/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 79ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/foods" for 127.0.0.1 at 2018-12-05 09:13:01 -0500
+Processing by FoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eyE5D9DB00CkzdP6Jo66IM4Imr4681t7cUj1rbmp9PUAodnzgL84isxSl56GUFmoKnHDHi330UrdcNYEZvbhTw==", "food"=>{"name"=>"Carrots", "description"=>"orange", "user"=>"1", "hall"=>"1"}, "commit"=>"Create Food"}
+Unpermitted parameters: :user, :hall
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (7.3ms)
+  Rendered foods/new.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 95ms (Views: 88.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/foods" for 127.0.0.1 at 2018-12-05 09:13:08 -0500
+Processing by FoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XEzzx04d/ZiFsVdBTfpLc2GZ9l+vH0rJ0M3nzMhFzDgnzBM7HmMWUu0uEyXtJKj7heCv/7gbwPh89cRlFxrZgg==", "food"=>{"name"=>"Carrots", "description"=>"orange", "user"=>"1", "hall"=>"1"}, "commit"=>"Create Food"}
+Unpermitted parameters: :user, :hall
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (4.8ms)
+  Rendered foods/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 82ms (Views: 79.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/foods" for 127.0.0.1 at 2018-12-05 09:13:18 -0500
+Processing by FoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SE1MKqk8O6B0DA2Q/avOpK+WS2bnem/WIow2Uiw9Uy8zzazW+ULQahyTSfRddS0sS+8SxvB+5eeOtBX782JGlQ==", "food"=>{"name"=>"Carrots", "description"=>"orange", "user"=>"Ammar", "hall"=>"Luetner"}, "commit"=>"Create Food"}
+Unpermitted parameters: :user, :hall
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (5.6ms)
+  Rendered foods/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 74ms (Views: 69.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/foods" for 127.0.0.1 at 2018-12-05 09:13:28 -0500
+Processing by FoodsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v1DTsEIMrBevpR8xuAiGJ4EPlonM0DUNvJmtBWJ4o5TE0DNMEnJH3cc6W1UY1mWvZXbPKdvUvzwQoY6svSe2Lg==", "food"=>{"name"=>"Carrots", "description"=>"orange", "user_id"=>"1", "hall_id"=>"1"}, "commit"=>"Create Food"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mHall Load (0.0ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mFood Create (3.9ms)[0m  [1m[32mINSERT INTO "foods" ("name", "description", "user_id", "hall_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Carrots"], ["description", "orange"], ["user_id", 1], ["hall_id", 1], ["created_at", "2018-12-05 14:13:28.657415"], ["updated_at", "2018-12-05 14:13:28.657415"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Redirected to http://localhost:3000/foods/1
+Completed 302 Found in 13ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/foods/1" for 127.0.0.1 at 2018-12-05 09:13:28 -0500
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT  "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mHall Load (0.1ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."food_id" = ?[0m  [["food_id", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered foods/show.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 131ms (Views: 119.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/halls" for 127.0.0.1 at 2018-12-05 09:13:31 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 44ms (Views: 38.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-05 09:13:33 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."hall_id" = ?[0m  [["hall_id", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities" WHERE "amenities"."hall_id" = ?[0m  [["hall_id", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/halls" for 127.0.0.1 at 2018-12-05 09:18:12 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  Rendered halls/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 57ms (Views: 52.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:18:16 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 94ms (Views: 91.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:18:35 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 78ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-05 09:21:24 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected '='
+...pend=( f.button :submit, class="button is-primary" );@output...
+...                               ^:
+  app/views/foods/new.html.erb:30:in `'
+
+Started POST "/__better_errors/9ba35ec7e944d3e9/variables" for 127.0.0.1 at 2018-12-05 09:21:24 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateUsers (20181121154157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154157"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateHalls (20181121154216)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "halls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154216"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateFoods (20181121154251)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "foods" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "user_id" integer, "hall_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_541e2e5c7b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_a4c0cabe74"
+FOREIGN KEY ("hall_id")
+  REFERENCES "halls" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_foods_on_user_id" ON "foods" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_foods_on_hall_id" ON "foods" ("hall_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154251"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateAmenities (20181121175544)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "amenities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "status" varchar, "user_id" integer, "hall_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_d7ed585fbf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1122b89d0e"
+FOREIGN KEY ("hall_id")
+  REFERENCES "halls" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_amenities_on_user_id" ON "amenities" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_amenities_on_hall_id" ON "amenities" ("hall_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121175544"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-05 14:38:14.233005"], ["updated_at", "2018-12-05 14:38:14.233005"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateComments (20181205143832)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating" integer, "comment" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181205143832"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateComments (20181205143941)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateUsers (20181121154157)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154157"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateHalls (20181121154216)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "halls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154216"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateFoods (20181121154251)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "foods" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "user_id" integer, "hall_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_541e2e5c7b"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_a4c0cabe74"
+FOREIGN KEY ("hall_id")
+  REFERENCES "halls" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_foods_on_user_id" ON "foods" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_foods_on_hall_id" ON "foods" ("hall_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121154251"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateAmenities (20181121175544)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "amenities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "status" varchar, "user_id" integer, "hall_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_d7ed585fbf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1122b89d0e"
+FOREIGN KEY ("hall_id")
+  REFERENCES "halls" ("id")
+)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_amenities_on_user_id" ON "amenities" ("user_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_amenities_on_hall_id" ON "amenities" ("hall_id")[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181121175544"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+Migrating to CreateComments (20181205143941)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181205143941"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-05 14:39:59.640720"], ["updated_at", "2018-12-05 14:39:59.640720"]]
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.3.0/gems/activesupport-5.2.1/lib/active_support/subscriber.rb:101

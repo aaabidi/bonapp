@@ -2,12 +2,8 @@
 
 one:
   rating: 1
-  body: MyText
-  food: one
-  user: one
+  comment: MyString
 
 two:
   rating: 1
-  body: MyText
-  food: two
-  user: two
+  comment: MyString

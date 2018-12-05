@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_175544) do
+ActiveRecord::Schema.define(version: 2018_12_05_143941) do
 
   create_table "amenities", force: :cascade do |t|
     t.string "name"
@@ -25,13 +25,9 @@ ActiveRecord::Schema.define(version: 2018_11_21_175544) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "rating"
-    t.text "body"
-    t.integer "food_id"
-    t.integer "user_id"
+    t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["food_id"], name: "index_comments_on_food_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -49,16 +45,6 @@ ActiveRecord::Schema.define(version: 2018_11_21_175544) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "statuses", force: :cascade do |t|
-    t.string "status"
-    t.integer "amenity_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["amenity_id"], name: "index_statuses_on_amenity_id"
-    t.index ["user_id"], name: "index_statuses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

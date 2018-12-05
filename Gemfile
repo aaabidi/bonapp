@@ -45,6 +45,8 @@ gem 'better_errors', '~> 2.5'
 
 gem 'bulma-rails', '~> 0.7.2'
 
+gem 'simple_form'
+
 
 
 group :development do

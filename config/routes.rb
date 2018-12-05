@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   resources :amenities
   resources :amenities do
-    resources :statuses
-  end
+    end
   
   resources :foods do
-    resources :comments
-  end
+    end
 
   resources :halls do
     resources :foods
