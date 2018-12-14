@@ -1,69 +1,90 @@
 <p id="notice"><%= notice %></p>
 
 
-
-
-
 <section class="section">
 	<div class="container">
 		<div class="content">
-      <h2> <%=@food.name%> </h2>
-			<h3 ><%= @food.description %> </h3>
+      <h1 class="title is-1"> <%=@food.name%> </h1>
+			<h1 class="subtitle is-3"><%= @food.description %> </h1>
 		</div>
 	</div>
 </section>
 
+
 <div class="section">
 	<div class="container">
-<% @food.reviews.each do |review|%>
-<div class="card">
-<div class="card-content">
-  <div class="media">
-    <div class="media-content">
-<p class='description'>
-  <strong>User:</strong>
-  <%= review.reviewer %>
-</p>
+		<% @food.reviews.each do |review|%>
+			<div class="card">
+				<div class="card-content">
+				  <div class="media">
+  				  <div class="media-content">
+							<p class='description'>
+						  <strong>User:</strong>
+						  <%= review.reviewer %>
+							</p>
 
-<p class='description'>
-  <strong>Rating:</strong>
-  <%= review.rating %>
-</p>
+							<p class='description'>
+							  <strong>Rating:</strong>
+							  <%= review.rating %>
+							</p>
 
-<p class='description'>
-  <strong>Review:</strong>
-  <%= review.review %>
-</p>
-<% end %>
-
-<h2>Write a Review</h2>
-<%= form_for([@food, @food.reviews.build]) do |f| %>
-
-
-<div class="field">
-  <div class="control">
-  <%= f.label :reviewer %> <br />
-  <%= f.text_field :reviewer, :value => current_user.name %>
-</div>
+							<p class='description'>
+							  <strong>Review:</strong>
+							  <%= review.review %>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>
 
-  <div class="field">
-    <div class="control">
-  <%= f.label :review %> <br />
-  <%= f.text_area :review%>
-</div>
-</div>
 
-  <div class="field">
-    <div class="control">
-  <%= f.label :rating %> <br />
-  <%= f.text_field :rating %>
-</div>
-</div>
+<div class="section">
+  <div class="container">
+    <h2 class="title is-2">Write a Review</h2>
 
-<div class="field">
-  <div class="control">
-  <%= f.submit%>
+			<%= simple_form_for([@food, @food.reviews.build]) do |f| %>
+			  <%= f.error_notification %>
+			  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+			  <div class="form-inputs">
+
+			    <div class="field">
+			      <div class="control">
+			    <%= f.input :reviewer, :input_html => { :readonly => true, :value => current_user.name } %>
+			      </div>
+			    </div>
+
+			    <div class="field">
+			      <div class="control">
+			    <%= f.input :review %>
+			      </div>
+			    </div>
+
+			    <div class="field">
+			      <div class="control">
+			    <%= f.input :rating %>
+			      </div>
+			    </div>
+
+				</div>
+
+		  <div class="field">
+		    <div class="control">
+		    <%= f.button :submit, class:"button is-medium is-info" %>
+	    	</div>
+	    </div>
+
+
+	    <div class="field">
+	      <div class="control">
+	      <%= link_to 'Back', foods_path, class:"button is-small is-info" %>
+	      </div>
+	    </div>
+
+		<% end %>
+
+	</div>
 </div>
-</div>
-<% end %>

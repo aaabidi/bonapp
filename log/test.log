@@ -1,0 +1,186 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.101156', '2018-12-14 02:03:48.101156', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.101156', '2018-12-14 02:03:48.101156', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.104768', '2018-12-14 02:03:48.104768', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.104768', '2018-12-14 02:03:48.104768', 298486374)[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.561740', '2018-12-14 02:03:48.561740', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.561740', '2018-12-14 02:03:48.561740', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.562438', '2018-12-14 02:03:48.562438', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.562438', '2018-12-14 02:03:48.562438', 298486374)[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.573936', '2018-12-14 02:03:48.573936', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.573936', '2018-12-14 02:03:48.573936', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.574531', '2018-12-14 02:03:48.574531', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.574531', '2018-12-14 02:03:48.574531', 298486374)[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.587722', '2018-12-14 02:03:48.587722', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.587722', '2018-12-14 02:03:48.587722', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.588803', '2018-12-14 02:03:48.588803', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.588803', '2018-12-14 02:03:48.588803', 298486374)[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.601753', '2018-12-14 02:03:48.601753', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.601753', '2018-12-14 02:03:48.601753', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.604091', '2018-12-14 02:03:48.604091', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.604091', '2018-12-14 02:03:48.604091', 298486374)[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.8ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.614255', '2018-12-14 02:03:48.614255', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.614255', '2018-12-14 02:03:48.614255', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.615071', '2018-12-14 02:03:48.615071', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.615071', '2018-12-14 02:03:48.615071', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.677938', '2018-12-14 02:03:48.677938', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.677938', '2018-12-14 02:03:48.677938', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.678654', '2018-12-14 02:03:48.678654', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.678654', '2018-12-14 02:03:48.678654', 298486374)[0m
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (8.9ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (2.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.693537', '2018-12-14 02:03:48.693537', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.693537', '2018-12-14 02:03:48.693537', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.697031', '2018-12-14 02:03:48.697031', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.697031', '2018-12-14 02:03:48.697031', 298486374)[0m
+  [1m[35m (1.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.723512', '2018-12-14 02:03:48.723512', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.723512', '2018-12-14 02:03:48.723512', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.724257', '2018-12-14 02:03:48.724257', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.724257', '2018-12-14 02:03:48.724257', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (2.9ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.754841', '2018-12-14 02:03:48.754841', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.754841', '2018-12-14 02:03:48.754841', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.755964', '2018-12-14 02:03:48.755964', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.755964', '2018-12-14 02:03:48.755964', 298486374)[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (3.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.794233', '2018-12-14 02:03:48.794233', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.794233', '2018-12-14 02:03:48.794233', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.794961', '2018-12-14 02:03:48.794961', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.794961', '2018-12-14 02:03:48.794961', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.811770', '2018-12-14 02:03:48.811770', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.811770', '2018-12-14 02:03:48.811770', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.812490', '2018-12-14 02:03:48.812490', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.812490', '2018-12-14 02:03:48.812490', 298486374)[0m
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.863763', '2018-12-14 02:03:48.863763', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.863763', '2018-12-14 02:03:48.863763', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (2.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.868127', '2018-12-14 02:03:48.868127', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.868127', '2018-12-14 02:03:48.868127', 298486374)[0m
+  [1m[35m (19.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "halls"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.929133', '2018-12-14 02:03:48.929133', 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "reviews" ("reviewer", "rating", "review", "created_at", "updated_at", "id", "food_id") VALUES ('MyString', 1, 'MyString', '2018-12-14 02:03:48.929133', '2018-12-14 02:03:48.929133', 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.929640', '2018-12-14 02:03:48.929640', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "id") VALUES ('2018-12-14 02:03:48.929640', '2018-12-14 02:03:48.929640', 298486374)[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
