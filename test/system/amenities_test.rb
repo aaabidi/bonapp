@@ -14,8 +14,15 @@ class AmenitiesTest < ApplicationSystemTestCase
     visit amenities_url
     click_on "New Amenity"
 
+<<<<<<< HEAD
     fill_in "Hall name", with: @amenity.hall_name
     fill_in "Name", with: @amenity.name
+=======
+    fill_in "Hall", with: @amenity.hall_id
+    fill_in "Name", with: @amenity.name
+    fill_in "Status", with: @amenity.status
+    fill_in "User", with: @amenity.user_id
+>>>>>>> 4ebe9d6d9003f9ee90dc5b2f170c79dac4c134e4
     click_on "Create Amenity"
 
     assert_text "Amenity was successfully created"
@@ -26,8 +33,15 @@ class AmenitiesTest < ApplicationSystemTestCase
     visit amenities_url
     click_on "Edit", match: :first
 
+<<<<<<< HEAD
     fill_in "Hall name", with: @amenity.hall_name
     fill_in "Name", with: @amenity.name
+=======
+    fill_in "Hall", with: @amenity.hall_id
+    fill_in "Name", with: @amenity.name
+    fill_in "Status", with: @amenity.status
+    fill_in "User", with: @amenity.user_id
+>>>>>>> 4ebe9d6d9003f9ee90dc5b2f170c79dac4c134e4
     click_on "Update Amenity"
 
     assert_text "Amenity was successfully updated"

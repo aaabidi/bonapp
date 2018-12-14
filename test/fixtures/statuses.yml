@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   reviewer: MyString
   status: MyString
   amenity: one
@@ -9,3 +10,13 @@ two:
   reviewer: MyString
   status: MyString
   amenity: two
+=======
+  status: MyString
+  amenity: one
+  user: one
+
+two:
+  status: MyString
+  amenity: two
+  user: two
+>>>>>>> 4ebe9d6d9003f9ee90dc5b2f170c79dac4c134e4
