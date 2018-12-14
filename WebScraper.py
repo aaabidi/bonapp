@@ -1,7 +1,9 @@
+
 import json
 import re
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+
 
 #Create Dictionarys for meals
 fribleyMeals = {}
@@ -11,8 +13,12 @@ leutnerMealNames = {}
 
 # Set links for dining halls
 fribleyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/")
-#fribleyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/2018-12-02/") #sunday website
 leutnerUrl = urlopen("https://case.cafebonappetit.com/cafe/leutner-cafe/")
+
+#other days used for testing
+#fribleyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/2018-12-17/") 
+#leutnerUrl = urlopen("https://case.cafebonappetit.com/cafe/leutner-cafe/2018-12-17/") 
+
 
 #Create Soups
 fribleySoup = BeautifulSoup(fribleyUrl, "html.parser")
