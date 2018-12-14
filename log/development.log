@@ -6451,3 +6451,213 @@ Processing by HallsController#show as HTML
 Completed 200 OK in 62ms (Views: 57.5ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-13 21:31:25 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.gem/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.4ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 490ms (Views: 445.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-13 21:31:31 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 54ms (Views: 47.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-13 21:31:32 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-13 21:31:34 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.1ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-13 21:31:38 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 60ms (Views: 57.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-13 21:31:39 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 63ms (Views: 60.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-13 21:31:51 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.9ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:5
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 1]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 2]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 3]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 6]]
+  ↳ app/views/halls/show.html.erb:18
+  Rendered halls/show.html.erb within layouts/application (53.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 114ms (Views: 106.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/foods/1" for 127.0.0.1 at 2018-12-13 21:31:52 -0500
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT  "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:67
+  Rendering foods/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 1]]
+  ↳ app/views/foods/show.html.erb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/show.html.erb:56
+  Rendered foods/show.html.erb within layouts/application (82.7ms)
+Completed 200 OK in 120ms (Views: 113.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-13 21:36:48 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (1.0ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 106ms (Views: 91.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-13 21:36:51 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 1]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 2]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 3]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 6]]
+  ↳ app/views/halls/show.html.erb:18
+  Rendered halls/show.html.erb within layouts/application (12.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:49
+Completed 200 OK in 63ms (Views: 53.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-13 21:37:04 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 1]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 2]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 3]]
+  ↳ app/views/halls/show.html.erb:18
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 6]]
+  ↳ app/views/halls/show.html.erb:18
+  Rendered halls/show.html.erb within layouts/application (8.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:44
+Completed 200 OK in 65ms (Views: 59.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 17:33:05 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.6ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 149ms (Views: 134.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 17:33:05 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  Rendered halls/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 72ms (Views: 68.0ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAmenities (20181214223834)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181214223834_create_amenities.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "amenities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "hall_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181214223834_create_amenities.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181214223834"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateStatuses (20181214223904)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "statuses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "reviewer" varchar, "status" varchar, "amenity_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_fd711fd62f"
+FOREIGN KEY ("amenity_id")
+  REFERENCES "amenities" ("id")
+)[0m
+  ↳ db/migrate/20181214223904_create_statuses.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_statuses_on_amenity_id" ON "statuses" ("amenity_id")[0m
+  ↳ db/migrate/20181214223904_create_statuses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181214223904"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

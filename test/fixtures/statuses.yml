@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reviewer: MyString
+  status: MyString
+  amenity: one
+
+two:
+  reviewer: MyString
+  status: MyString
+  amenity: two
