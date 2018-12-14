@@ -1,2 +1,0 @@
-class Amenity < ApplicationRecord
-end
