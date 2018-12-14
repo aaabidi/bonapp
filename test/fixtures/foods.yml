@@ -2,12 +2,10 @@
 
 one:
   name: MyString
+  hall_name: MyString
   description: MyText
-  user: one
-  hall: one
 
 two:
   name: MyString
+  hall_name: MyString
   description: MyText
-  user: two
-  hall: two

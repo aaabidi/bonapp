@@ -1,22 +1,35 @@
-<%= form_with(model: hall, local: true) do |form| %>
-  <% if hall.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hall.errors.count, "error") %> prohibited this hall from being saved:</h2>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-4">
 
-      <ul>
-      <% hall.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <h2 class="title is-2">New Hall</h2>
+
+<%= simple_form_for(@hall) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="field">
+      <div class="control">
+        <%= f.input :name %>
+      </div>
     </div>
-  <% end %>
+  </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="control">
+    <%= f.button :submit, class:"button is-medium is-info"%>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>
+<div class="field">
+  <div class="control">
+  <%= link_to 'Back', halls_path, class:"button is-small is-info" %>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>

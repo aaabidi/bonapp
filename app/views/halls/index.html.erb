@@ -1,27 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Halls</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% content_for :page_title,  "Dining Halls" %>
 
-  <tbody>
-    <% @halls.each do |hall| %>
-      <tr>
-        <td><%= hall.name %></td>
-        <td><%= link_to 'Show', hall %></td>
-        <td><%= link_to 'Edit', edit_hall_path(hall) %></td>
-        <td><%= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Hall', new_hall_path %>
+<div class="section">
+	<div class="container">
+		<% Hall.all.each do |hall| %>
+			<div class="card">
+		  <div class="card-content">
+		    <div class="media">
+		      <div class="media-content">
+		        <p class="title is-4"><%= link_to hall.name, hall  %></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<% end %>
+	</div>
+</div>

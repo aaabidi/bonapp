@@ -15,9 +15,8 @@ class FoodsTest < ApplicationSystemTestCase
     click_on "New Food"
 
     fill_in "Description", with: @food.description
-    fill_in "Hall", with: @food.hall_id
+    fill_in "Hall name", with: @food.hall_name
     fill_in "Name", with: @food.name
-    fill_in "User", with: @food.user_id
     click_on "Create Food"
 
     assert_text "Food was successfully created"
@@ -29,9 +28,8 @@ class FoodsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Description", with: @food.description
-    fill_in "Hall", with: @food.hall_id
+    fill_in "Hall name", with: @food.hall_name
     fill_in "Name", with: @food.name
-    fill_in "User", with: @food.user_id
     click_on "Update Food"
 
     assert_text "Food was successfully updated"

@@ -1,0 +1,18 @@
+0000000000000000000000000000000000000000 2958303141323a2c629c9df17ec37d31230e9e64 aaabidi <ammarabidi99@gmail.com> 1542817412 -0500	commit (initial): Created all models and made new application version
+2958303141323a2c629c9df17ec37d31230e9e64 b6040e20e280c0272502886e96839345856fc2f4 aaabidi <ammarabidi99@gmail.com> 1542818451 -0500	commit: Changed view of foods and did work on comments
+b6040e20e280c0272502886e96839345856fc2f4 f8b3f1d6b35829a57f4ba3416263207348202fcd aaabidi <ammarabidi99@gmail.com> 1542819396 -0500	commit: Checkpoint
+f8b3f1d6b35829a57f4ba3416263207348202fcd 67c0b7029537de1d9a4051e700f4379c5d0b2368 aaabidi <ammarabidi99@gmail.com> 1542832287 -0500	commit: Validation of fields
+67c0b7029537de1d9a4051e700f4379c5d0b2368 5f7428d54a903fdbd1114b7e14728e497ebb3e84 aaabidi <ammarabidi99@gmail.com> 1542832316 -0500	commit: Adding untracked files
+5f7428d54a903fdbd1114b7e14728e497ebb3e84 4ef603a7fee158e773b5532f764ff1d418409ba9 aaabidi <ammarabidi99@gmail.com> 1543794630 -0500	commit: ugh
+4ef603a7fee158e773b5532f764ff1d418409ba9 4ef603a7fee158e773b5532f764ff1d418409ba9 aaabidi <ammarabidi99@gmail.com> 1543795423 -0500	checkout: moving from master to major-changes
+4ef603a7fee158e773b5532f764ff1d418409ba9 b329efdb08c419e22f2438f6b474109d5066a72d aaabidi <ammarabidi99@gmail.com> 1543795444 -0500	commit: a fresh start
+b329efdb08c419e22f2438f6b474109d5066a72d bf6fb05ab77e72d2900ee00cb24478bdbea86f5a aaabidi <ammarabidi99@gmail.com> 1543797056 -0500	commit: kk
+bf6fb05ab77e72d2900ee00cb24478bdbea86f5a acb3fb4a39f9efdf0a0fef2fe488ef388744e483 aaabidi <ammarabidi99@gmail.com> 1543799480 -0500	commit: some stuff
+acb3fb4a39f9efdf0a0fef2fe488ef388744e483 4ef603a7fee158e773b5532f764ff1d418409ba9 aaabidi <ammarabidi99@gmail.com> 1543799517 -0500	checkout: moving from major-changes to master
+4ef603a7fee158e773b5532f764ff1d418409ba9 769c619e3dc7bce70fd91e2d6b7f095156124791 aaabidi <ammarabidi99@gmail.com> 1543799583 -0500	commit: README
+769c619e3dc7bce70fd91e2d6b7f095156124791 acb3fb4a39f9efdf0a0fef2fe488ef388744e483 aaabidi <ammarabidi99@gmail.com> 1544018585 -0500	checkout: moving from master to major-changes
+acb3fb4a39f9efdf0a0fef2fe488ef388744e483 7f2924fa1530f24f373a43282edd8c5cf917fed1 aaabidi <ammarabidi99@gmail.com> 1544018593 -0500	commit: Dear god please help
+7f2924fa1530f24f373a43282edd8c5cf917fed1 559d9ddaea8e875e1ffa332b43b115edb54ab0f2 aaabidi <ammarabidi99@gmail.com> 1544018602 -0500	commit: ...
+559d9ddaea8e875e1ffa332b43b115edb54ab0f2 769c619e3dc7bce70fd91e2d6b7f095156124791 aaabidi <ammarabidi99@gmail.com> 1544018637 -0500	checkout: moving from major-changes to master
+769c619e3dc7bce70fd91e2d6b7f095156124791 453202215f242a5f8b61d3f40bb79678103cd693 aaabidi <ammarabidi99@gmail.com> 1544020819 -0500	commit: we movin
+453202215f242a5f8b61d3f40bb79678103cd693 e1e38329ca973b4166eb58989b60fc732aa7ccf5 aaabidi <ammarabidi99@gmail.com> 1544020842 -0500	pull: Merge made by the 'recursive' strategy.

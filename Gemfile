@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.3.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -36,18 +36,16 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'bulma-rails', '~> 0.7.2'
+
+gem 'simple_form', '~> 4.1'
+
+gem 'devise', '~> 4.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
-
-gem 'better_errors', '~> 2.5'
-
-gem 'bulma-rails', '~> 0.7.2'
-
-gem 'simple_form'
-
-
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -56,8 +54,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'guard'
-  gem 'rb-readline'
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'guard', '~> 2.15'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
 end
 
 group :test do

@@ -1,41 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @hall.name %>
-</p>
-
-<h2>Menu</h2>
-<% @hall.foods.each do |food| %>
-  <p>
-    <strong>Name:</strong>
-    <%= food.name %>
-  </p>
-
-  <p>
-    <strong>Description</strong>
-    <%= food.description %>
-  </p>
-
-  <p>
-    <strong>Rating:</strong>
-     <p>FIX THIS!</p>
-  </p>
-<% end %>
-
-<h2>Amenities</h2>
-<% @hall.amenities.each do |amenity| %>
-  <p>
-    <strong>Name:</strong>
-    <%= amenity.name %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-     <%=amenity.status%>
-  </p>
-<% end %>
-
-
-<%= link_to 'Edit', edit_hall_path(@hall) %> |
-<%= link_to 'Back', halls_path %>
+<div class="section">
+	<div class="container">
+		<% Food.all.each do |food| %>
+    <% if food.hall_name == @hall.name %>
+			<div class="card">
+		  <div class="card-content">
+		    <div class="media">
+		      <div class="media-content">
+		        <p class="title is-4"><%= link_to food.name, food  %></p>
+		      </div>
+		    </div>
+		    <div class="description">
+		     	<%= food.description %>
+		    </div>
+		    <div class="comment-count">
+		    	<span class="tag is-rounded"><%= food.reviews.count %> comments</span>
+		    </div>
+		  </div>
+		</div>
+    <% end %>
+		<% end %>
+    <%= link_to 'Back', halls_path, class: "button is-small is-info" %>
+	</div>
+</div>

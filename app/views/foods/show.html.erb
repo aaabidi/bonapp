@@ -1,64 +1,69 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @food.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @food.description %>
-</p>
 
-<p>
+
+
+<section class="section">
+	<div class="container">
+		<div class="content">
+      <h2> <%=@food.name%> </h2>
+			<h3 ><%= @food.description %> </h3>
+		</div>
+	</div>
+</section>
+
+<div class="section">
+	<div class="container">
+<% @food.reviews.each do |review|%>
+<div class="card">
+<div class="card-content">
+  <div class="media">
+    <div class="media-content">
+<p class='description'>
   <strong>User:</strong>
-  <%= @food.user.name %>
+  <%= review.reviewer %>
 </p>
 
-<p>
-  <strong>Hall:</strong>
-  <%= @food.hall %>
+<p class='description'>
+  <strong>Rating:</strong>
+  <%= review.rating %>
 </p>
 
-<h2>Comments</h2>
-<% @food.comments.each do |comment| %>
-  <p>
-    <strong>User:</strong>
-    <%= comment.user.name %>
-  </p>
-
-  <p>
-    <strong>Rating:</strong>
-    <%= comment.rating %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
+<p class='description'>
+  <strong>Review:</strong>
+  <%= review.review %>
+</p>
 <% end %>
 
-<%= form_for([@food,@food.comments.new]) do |f| %>
-  <p>
-    <%= f.label :user %> <br />
-    <%= f.text_field :user %>
-  </p>
+<h2>Write a Review</h2>
+<%= form_for([@food, @food.reviews.build]) do |f| %>
 
-  <p>
-    <%= f.label :rating %> <br />
-    <%= f.number_field :rating, in: 1..5, step: 1 %>
-  </p>
 
-  <p>
-    <%= f.label :body %> <br />
-    <%= f.text_area :body %>
-  </p>
+<div class="field">
+  <div class="control">
+  <%= f.label :reviewer %> <br />
+  <%= f.text_field :reviewer, :value => current_user.name %>
+</div>
+</div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="field">
+    <div class="control">
+  <%= f.label :review %> <br />
+  <%= f.text_area :review%>
+</div>
+</div>
+
+  <div class="field">
+    <div class="control">
+  <%= f.label :rating %> <br />
+  <%= f.text_field :rating %>
+</div>
+</div>
+
+<div class="field">
+  <div class="control">
+  <%= f.submit%>
+</div>
+</div>
 <% end %>
-
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back to Food Item', foods_path %> |
-<%= link_to 'Back to Dining Hall', halls_path %>
