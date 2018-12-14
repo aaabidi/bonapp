@@ -23,6 +23,7 @@ friblyBreakfast = friblySoup.find('section', id='breakfast') #Finds just breakfa
 if friblyBreakfast is None: #Checks if breakfast is served
     print ("No Breakfast")
 else:
+    friblyBreakfast = friblyBreakfast.find('div', tabindex='0')
     friblyBreakfastFood = friblyBreakfast.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
     friblyMeals[1] = friblyBreakfastFood #Adds breakfast to list of meals
     friblyMealNames[1] = "Breakfast" #Adds breakfast to list of meal names
