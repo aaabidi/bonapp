@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :amenities
   root 'halls#index'
   resources :foods do
     resources :reviews
