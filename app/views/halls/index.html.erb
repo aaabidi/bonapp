@@ -10,7 +10,11 @@
 		  <div class="card-content">
 		    <div class="media">
 		      <div class="media-content">
+						<% if user_signed_in? %>
 		        <p class="title is-4"><%= link_to hall.name, hall  %></p>
+						<% else %>
+						<p class="title is-4"><%= link_to hall.name, new_user_session_path %></p>
+						<% end %>
 		      </div>
 		    </div>
 		  </div>

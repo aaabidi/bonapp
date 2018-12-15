@@ -3,5 +3,4 @@ class Food < ApplicationRecord
 
   validates :name, presence: true
   validates :hall_name, presence: true
-  validates :description, presence: true
 end

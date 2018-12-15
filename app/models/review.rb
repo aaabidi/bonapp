@@ -3,6 +3,6 @@ class Review < ApplicationRecord
 
   validates :reviewer, presence: true
   validates :review, presence: true
-  validates :rating, presence: true
-  
+  validates :rating, presence: true, inclusion: { in: 1..5 }
+
 end
