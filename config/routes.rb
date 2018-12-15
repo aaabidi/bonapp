@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :amenities
   root 'halls#index'
+  resources :amenities do
+    resources :statuses
+  end
   resources :foods do
     resources :reviews
   end

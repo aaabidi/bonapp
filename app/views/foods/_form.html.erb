@@ -4,46 +4,47 @@
       <div class="column is-4">
         <h2 class="title is-2">New Food</h2>
 
-<%= simple_form_for(@food) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <%= simple_form_for(@food) do |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+            <div class="form-inputs">
 
-    <div class="field">
-      <div class="control">
-    <%= f.input :name %>
+              <div class="field">
+                <div class="control">
+                  <%= f.input :name %>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <%= f.input :hall_name %>
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <%= f.input :description %>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <%= f.button :submit, class:"button is-medium is-info" %>
+              </div>
+            </div>
+
+
+              <div class="field">
+                <div class="control">
+                  <%= link_to 'Back', root_path, class:"button is-small is-info" %>
+                </div>
+              </div>
+
+            <% end %>
       </div>
     </div>
-
-    <div class="field">
-      <div class="control">
-    <%= f.input :hall_name %>
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="control">
-    <%= f.input :description %>
-      </div>
-    </div>
-
   </div>
-
-  <div class="field">
-    <div class="control">
-    <%= f.button :submit, class:"button is-medium is-info" %>
-    </div>
-    </div>
-
-
-    <div class="field">
-      <div class="control">
-      <%= link_to 'Back', foods_path, class:"button is-small is-info" %>
-      </div>
-      </div>
-
-<% end %>
-</div>
-</div>
 </div>

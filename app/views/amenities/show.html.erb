@@ -1,14 +1,79 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @amenity.name %>
-</p>
+<section class="section">
+	<div class="container">
+		<div class="content">
+      <h1 class="title is-1"> <%=@amenity.name%> </h1>
+		</div>
+	</div>
+</section>
 
-<p>
-  <strong>Hall name:</strong>
-  <%= @amenity.hall_name %>
-</p>
+<div class="section">
+	<div class="container">
+		<% @amenity.statuses.each do |status|%>
+			<div class="card">
+				<div class="card-content">
+				  <div class="media">
+  				  <div class="media-content">
 
-<%= link_to 'Edit', edit_amenity_path(@amenity) %> |
-<%= link_to 'Back', amenities_path %>
+							<p class='description'>
+						  <strong>User:</strong>
+						  <%= status.reviewer %>
+							</p>
+
+							<p class='description'>
+							  <strong>Status:</strong>
+							  <%= status.status %>
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <h2 class="title is-2">Write a Review</h2>
+
+			<%= simple_form_for([@amenity, @amenity.statuses.build]) do |f| %>
+			  <%= f.error_notification %>
+			  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+			  <div class="form-inputs">
+
+			    <div class="field">
+			      <div class="control">
+			        <%= f.input :reviewer, :input_html => { :readonly => true, :value => current_user.name } %>
+			      </div>
+			    </div>
+
+					<div class="field">
+						<div class="control">
+							<div class="radio">
+			        	<%= f.input :status, as: :radio_buttons, collection: ["Available", "Limited", "Unavailable"]%> 
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+		  <div class="field">
+		    <div class="control">
+		      <%= f.button :submit, class:"button is-medium is-info" %>
+	    	</div>
+	    </div>
+
+
+	    <div class="field">
+	      <div class="control">
+	        <%= link_to 'Back', amenity_path(@amenity), class:"button is-small is-info" %>
+	      </div>
+	    </div>
+
+		<% end %>
+
+	</div>
+</div>

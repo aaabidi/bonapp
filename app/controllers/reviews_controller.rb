@@ -7,6 +7,11 @@ class ReviewsController < ApplicationController
     redirect_to food_path(@food)
   end
 
+  def index
+    @review = Review.all.order("created_at DESC")
+    @review = Review.new
+  end
+  
   private
     def review_params
       params.require(:review).permit(:reviewer, :review, :rating)

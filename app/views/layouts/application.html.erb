@@ -32,7 +32,7 @@
 					<span></span>
   		</div>
   	 </div>
-     
+
 
 			<div id="navbarExample" class="navbar-menu">
 				<div class="navbar-end">
@@ -40,6 +40,9 @@
 					<div class="field is-grouped">
 						<p class="control">
 							<%= link_to 'New Food', new_food_url, class: "button is-info is-inverted" %>
+						</p>
+            <p class="control">
+							<%= link_to 'New Amenity', new_amenity_url, class: "button is-info is-inverted" %>
 						</p>
             <% if user_signed_in? %>
               <p class="control">

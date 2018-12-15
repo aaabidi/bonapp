@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1 class="subtitle is-3">Foods</h1>
+
 <div class="section">
 	<div class="container">
 		<% Food.all.each do |food| %>
@@ -16,6 +18,30 @@
 		    </div>
 		    <div class="comment-count">
 		    	<span class="tag is-rounded"><%= food.reviews.count %> comments</span>
+		    </div>
+		  </div>
+		</div>
+    <% end %>
+		<% end %>
+    <%= link_to 'Back', halls_path, class: "button is-small is-info" %>
+	</div>
+</div>
+
+<h1 class="subtitle is-3">Amenities</h1>
+
+<div class="section">
+	<div class="container">
+		<% Amenity.all.each do |amenity| %>
+    <% if amenity.hall_name == @hall.name %>
+			<div class="card">
+		  <div class="card-content">
+		    <div class="media">
+		      <div class="media-content">
+		        <p class="title is-4"><%= link_to amenity.name, amenity  %></p>
+		      </div>
+		    </div>
+		    <div class="comment-count">
+		    	<span class="tag is-rounded"><%= amenity.statuses.count %> statuses</span>
 		    </div>
 		  </div>
 		</div>
