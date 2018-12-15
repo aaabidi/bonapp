@@ -1,123 +1,130 @@
+
 import json
 import re
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
+
 #Create Dictionarys for meals
-friblyMeals = {}
-friblyMealNames = {}
-luetnerMeals = {}
-luetnerMealNames = {}
+fribleyMeals = {}
+fribleyMealNames = {}
+leutnerMeals = {}
+leutnerMealNames = {}
 
 # Set links for dining halls
-friblyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/")
-#friblyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/2018-12-02/") #sunday website
-luetnerUrl = urlopen("https://case.cafebonappetit.com/cafe/leutner-cafe/")
+fribleyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/")
+leutnerUrl = urlopen("https://case.cafebonappetit.com/cafe/leutner-cafe/")
+
+#other days used for testing
+#fribleyUrl = urlopen("https://case.cafebonappetit.com/cafe/fribley-marche/2018-12-17/")
+#leutnerUrl = urlopen("https://case.cafebonappetit.com/cafe/leutner-cafe/2018-12-17/")
+
 
 #Create Soups
-friblySoup = BeautifulSoup(friblyUrl, "html.parser")
-luetnerSoup = BeautifulSoup(luetnerUrl, "html.parser")
+fribleySoup = BeautifulSoup(fribleyUrl, "html.parser")
+leutnerSoup = BeautifulSoup(leutnerUrl, "html.parser")
 
 #Get Breakfast
-friblyBreakfast = friblySoup.find('section', id='breakfast') #Finds just breakfast section
-if friblyBreakfast is None: #Checks if breakfast is served
-    print ("No Breakfast")
-else:
-    friblyBreakfastFood = friblyBreakfast.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-    friblyMeals[1] = friblyBreakfastFood #Adds breakfast to list of meals
-    friblyMealNames[1] = "Breakfast" #Adds breakfast to list of meal names
+fribleyBreakfast = fribleySoup.find('section', id='breakfast') #Finds just breakfast section
+if fribleyBreakfast is not None: #Checks if breakfast is served
+    fribleyBreakfast = fribleyBreakfast.find('div', tabindex='0') #Selects just the first 'specials' tab
+    fribleyBreakfastFood = fribleyBreakfast.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    fribleyMeals[1] = fribleyBreakfastFood #Adds breakfast to list of meals
+    fribleyMealNames[1] = "Breakfast" #Adds breakfast to list of meal names
 
-luetnerBreakfast = luetnerSoup.find('section', id='breakfast') #Finds just breakfast section
-if luetnerBreakfast is None: #Checks if breakfast is served
-    print ("No Breakfast")
-else:
-    luetnerBreakfastFood = luetnerBreakfast.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-    luetnerMeals[1] = luetnerBreakfastFood #Adds breakfast to list of meals
-    luetnerMealNames[1] = "Breakfast" #Adds breakfast to list of meal names
+leutnerBreakfast = leutnerSoup.find('section', id='breakfast') #Finds just breakfast section
+if leutnerBreakfast is not None: #Checks if breakfast is served
+    leutnerBreakfast = leutnerBreakfast.find('div', tabindex='0') #Selects just the first 'specials' tab
+    leutnerBreakfastFood = leutnerBreakfast.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    leutnerMeals[1] = leutnerBreakfastFood #Adds breakfast to list of meals
+    leutnerMealNames[1] = "Breakfast" #Adds breakfast to list of meal names
 
 #Get Brunch
-friblyBrunch = friblySoup.find('section', id='brunch') #Finds just brunch section
-if friblyBrunch is None: #Checks if brunch is served
-    print ("No Brunch")
-else:
-    friblyBrunchFood = friblyBrunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-    friblyMeals[1] = friblyBrunchFood  #Adds Brunch to list of meals
-    friblyMealNames[1] = "Brunch" #Adds brunch to list of meal names
+fribleyBrunch = fribleySoup.find('section', id='brunch') #Finds just brunch section
+if fribleyBrunch is not None: #Checks if brunch is served
+    fribleyBrunch = fribleyBrunch.find('div', tabindex='0') #Selects just the first 'specials' tab
+    fribleyBrunchFood = fribleyBrunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    fribleyMeals[1] = fribleyBrunchFood  #Adds Brunch to list of meals
+    fribleyMealNames[1] = "Brunch" #Adds brunch to list of meal names
 
-luetnerBrunch = luetnerSoup.find('section', id='brunch') #Finds just brunch section
-if luetnerBrunch is None: #Checks if brunch is served
-    print ("No Brunch")
-else:
-    luetnerBrunchFood = luetnerBrunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-    luetnerMeals[1] = luetnerBrunchFood  #Adds Brunch to list of meals
-    luetnerMealNames[1] = "Brunch" #Adds brunch to list of meal names
+leutnerBrunch = leutnerSoup.find('section', id='brunch') #Finds just brunch section
+if leutnerBrunch is not None: #Checks if brunch is served
+    leutnerBrunch = leutnerBrunch.find('div', tabindex='0') #Selects just the first 'specials' tab
+    leutnerBrunchFood = leutnerBrunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    leutnerMeals[1] = leutnerBrunchFood  #Adds Brunch to list of meals
+    leutnerMealNames[1] = "Brunch" #Adds brunch to list of meal names
 
 #Get Lunch
-friblyLunch = friblySoup.find('section', id='lunch') #Finds just lunch section
-if friblyLunch is None: #Checks if Lunch is served
-    print ("No Lunch")
-else:
-    friblyLunchFood = friblyLunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-    friblyMeals[2] = friblyLunchFood  #Adds Lunch to list of meals
-    friblyMealNames[2] = "Lunch" #Adds Lunch to list of meal names
+fribleyLunch = fribleySoup.find('section', id='lunch') #Finds just lunch section
+if fribleyLunch is not None: #Checks if Lunch is served
+    fribleyLunch = fribleyLunch.find('div', tabindex='0') #Selects just the first 'specials' tab
+    fribleyLunchFood = fribleyLunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    fribleyMeals[2] = fribleyLunchFood  #Adds Lunch to list of meals
+    fribleyMealNames[2] = "Lunch" #Adds Lunch to list of meal names
 
-luetnerLunch = luetnerSoup.find('section', id='lunch') #Finds just lunch section
-if luetnerLunch is None: #Checks if Lunch is served
-    print ("No Lunch")
-else:
-    luetnerLunchFood = luetnerLunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-    luetnerMeals[2] = luetnerLunchFood  #Adds Lunch to list of meals
-    luetnerMealNames[2] = "Lunch" #Adds Lunch to list of meal names
+leutnerLunch = leutnerSoup.find('section', id='lunch') #Finds just lunch section
+if leutnerLunch is not None: #Checks if Lunch is served
+    leutnerLunch = leutnerLunch.find('div', tabindex='0') #Selects just the first 'specials' tab
+    leutnerLunchFood = leutnerLunch.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+    leutnerMeals[2] = leutnerLunchFood  #Adds Lunch to list of meals
+    leutnerMealNames[2] = "Lunch" #Adds Lunch to list of meal names
 
 #Get Dinner
-friblyDinner = friblySoup.find('section', id='dinner') #Finds just dinner section
-friblyDinnerFood = friblyDinner.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-if len(friblyMeals) == 2:  #Adds Dinner to list of meals, but also checks to see if there was brunch or not
-    friblyMeals[3] = friblyDinnerFood
-    friblyMealNames[3] = "Dinner"
+fribleyDinner = fribleySoup.find('section', id='dinner') #Finds just dinner section
+fribleyDinner = fribleyDinner.find('div', tabindex='0') #Selects just the first 'specials' tab
+fribleyDinnerFood = fribleyDinner.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+if len(fribleyMeals) == 2:  #Adds Dinner to list of meals, but also checks to see if there was brunch or not
+    fribleyMeals[3] = fribleyDinnerFood
+    fribleyMealNames[3] = "Dinner"
 else:
-    friblyMeals[2] = friblyDinnerFood
-    friblyMealNames[2] = "Dinner"
+    fribleyMeals[2] = fribleyDinnerFood
+    fribleyMealNames[2] = "Dinner"
 
-luetnerDinner = luetnerSoup.find('section', id='dinner') #Finds just dinner section
-luetnerDinnerFood = luetnerDinner.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
-if len(luetnerMeals) == 2:  #Adds Dinner to list of meals, but also checks to see if there was brunch or not
-    luetnerMeals[3] = luetnerDinnerFood
-    luetnerMealNames[3] = "Dinner"
+leutnerDinner = leutnerSoup.find('section', id='dinner') #Finds just dinner section
+leutnerDinner = leutnerDinner.find('div', tabindex='0') #Selects just the first 'specials' tab
+leutnerDinnerFood = leutnerDinner.find_all('button',class_='h4 site-panel__daypart-item-title') #Selects all food items
+if len(leutnerMeals) == 2:  #Adds Dinner to list of meals, but also checks to see if there was brunch or not
+    leutnerMeals[3] = leutnerDinnerFood
+    leutnerMealNames[3] = "Dinner"
 else:
-    luetnerMeals[2] = luetnerDinnerFood
-    luetnerMealNames[2] = "Dinner"
+    leutnerMeals[2] = leutnerDinnerFood
+    leutnerMealNames[2] = "Dinner"
 
-#Create A Json file for all of the meals at fribly
-for mealIndex, meal in friblyMeals.items():
+if fribleyBreakfast is None and fribleyLunch is None and leutnerBreakfast is None and leutnerLunch is None:
+    print ("brunch")
+else:
+    print("normal")
+
+#Create A Json file for all of the meals at fribley
+for mealIndex, meal in fribleyMeals.items():
 
     #Create Dictionary of foods
-    friblyDict = {}
+    fribleyDict = {}
 
     #Move and format food items to dictionarys
     for x in range(len(meal)):
         food = meal[x].text.strip() #formats and removes white space
         food = re.sub('\[.*?\]', '', food) #removes farm information
         food = food.replace("\u00f1", "n") #fixes Nne character
-        friblyDict[x] = food #add item to dictionary
+        fribleyDict[x] = food #add item to dictionary
 
     #Dump dictionaries to json files
-    with open('fribly'+friblyMealNames[mealIndex]+'.json', 'w') as fp:
-        json.dump(friblyDict, fp, indent=4)
-    
-#Create A Json file for all of the meals at luetner
-for mealIndex, meal in luetnerMeals.items():
+    with open('fribley'+fribleyMealNames[mealIndex]+'.json', 'w') as fp:
+        json.dump(fribleyDict, fp, indent=4)
+
+#Create A Json file for all of the meals at leutner
+for mealIndex, meal in leutnerMeals.items():
 
     #Create Dictionary of foods
-    luetnerDict = {}
+    leutnerDict = {}
 
     #Move and format food items to dictionarys
     for x in range(len(meal)):
         food = meal[x].text.strip() #formats and removes white space
         food = re.sub('\[.*?\]', '', food) #removes farm information
         food = food.replace("\u00f1", "n") #fixes Nne character
-        luetnerDict[x] = food #add item to dictionary
+        leutnerDict[x] = food #add item to dictionary
 
     #Dump dictionaries to json files
-    with open('luetner'+luetnerMealNames[mealIndex]+'.json', 'w') as fp:
-        json.dump(luetnerDict, fp, indent=4)
+    with open('leutner'+leutnerMealNames[mealIndex]+'.json', 'w') as fp:
+        json.dump(leutnerDict, fp, indent=4)
