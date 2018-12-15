@@ -9919,3 +9919,721 @@ Completed 200 OK in 502ms (Views: 437.8ms | ActiveRecord: 4.6ms)
 
   [1m[36mFood Destroy (1.1ms)[0m  [1m[31mDELETE FROM "foods"[0m
   [1m[36mReview Destroy (5.7ms)[0m  [1m[31mDELETE FROM "reviews"[0m
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-14 22:47:08 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.gem/ruby/2.3.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 1]]
+  ↳ app/views/halls/show.html.erb:20
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 2]]
+  ↳ app/views/halls/show.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 3]]
+  ↳ app/views/halls/show.html.erb:20
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 1]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (68.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 461ms (Views: 407.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:47:12 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 61ms (Views: 55.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-14 22:47:13 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 1]]
+  ↳ app/views/halls/show.html.erb:20
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 2]]
+  ↳ app/views/halls/show.html.erb:20
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."food_id" = ?[0m  [["food_id", 3]]
+  ↳ app/views/halls/show.html.erb:20
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 1]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (22.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 118ms (Views: 110.1ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mFood Destroy (3.3ms)[0m  [1m[31mDELETE FROM "foods"[0m
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-14 22:48:22 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 1]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 109ms (Views: 104.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:48:25 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 77ms (Views: 72.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/halls/2" for 127.0.0.1 at 2018-12-14 22:48:27 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  Rendered halls/show.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 66ms (Views: 60.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:48:28 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (49.0ms)
+  Rendered amenities/new.html.erb within layouts/application (51.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 93ms (Views: 89.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:48:34 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dUnicX598FPB61AuEpNkLAKdKTJTx1L7GPVR7RltX5YWpW+UC8v9nExHIsREVN1t/7wQ5haDUKUA5ofPpEUs5Q==", "amenity"=>{"name"=>"Chocolate Milk", "hall_name"=>"Fribley"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.8ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chocolate Milk"], ["hall_name", "Fribley"], ["created_at", "2018-12-15 03:48:34.634863"], ["updated_at", "2018-12-15 03:48:34.634863"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/2
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/amenities/2" for 127.0.0.1 at 2018-12-14 22:48:34 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 2]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (133.0ms)
+Completed 200 OK in 171ms (Views: 163.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:48:37 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 48ms (Views: 43.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/halls/2" for 127.0.0.1 at 2018-12-14 22:48:38 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 2]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 47ms (Views: 41.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:48:40 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (6.5ms)
+  Rendered amenities/new.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 55ms (Views: 50.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:48:45 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8d5iq/91NQC2lLMlz3h+fG8yMw6LcRzkKqxs8RPYPh6SMu9OisM4zzs4wc+Zv8c9khMK2s41Hroyv7rTrvBNbQ==", "amenity"=>{"name"=>"Forks", "hall_name"=>"Fribley"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.4ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Forks"], ["hall_name", "Fribley"], ["created_at", "2018-12-15 03:48:45.955198"], ["updated_at", "2018-12-15 03:48:45.955198"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/3
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/amenities/3" for 127.0.0.1 at 2018-12-14 22:48:45 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 3]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 67ms (Views: 62.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:48:57 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qFFqI1Ze875DdDNOikoWnS63qI1MLrZ1nvXpEH63p6pKP+ub04uOBVwSwJN7dYB36KCJW6Amo2WoS5NgVCo3vQ==", "amenity"=>{"name"=>"Spoons", "hall_name"=>"Knives"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (1.0ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spoons"], ["hall_name", "Knives"], ["created_at", "2018-12-15 03:48:57.118993"], ["updated_at", "2018-12-15 03:48:57.118993"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/4
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/amenities/4" for 127.0.0.1 at 2018-12-14 22:48:57 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 4]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 81ms (Views: 73.0ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mAmenity Destroy (1.4ms)[0m  [1m[31mDELETE FROM "amenities"[0m
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:49:24 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 57ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:49:26 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (6.4ms)
+  Rendered amenities/new.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:49:38 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BBjx9nu65avdEGUy2MESKrPJQI1JFBGBPkO9odMImqBn9HwTDgzoZFC8F9iOBqtrTuh5WQxQE98mUGuDbiDp0w==", "amenity"=>{"name"=>"Chocolate Milk", "hall_name"=>"Leutner"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.9ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chocolate Milk"], ["hall_name", "Leutner"], ["created_at", "2018-12-15 03:49:38.804302"], ["updated_at", "2018-12-15 03:49:38.804302"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/5
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/amenities/5" for 127.0.0.1 at 2018-12-14 22:49:38 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 5]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 55ms (Views: 51.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:49:39 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (4.2ms)
+  Rendered amenities/new.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:49:43 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4KC1nXEDgUw5mGNLQ3aWsjTvHuio4bn74UWIcoj3GAuDTDh4BLWMg7Q0EaEVsS/zyc4nPO2lu6X5Vl5QNd9reA==", "amenity"=>{"name"=>"Forks", "hall_name"=>"Leutner"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.4ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Forks"], ["hall_name", "Leutner"], ["created_at", "2018-12-15 03:49:43.581736"], ["updated_at", "2018-12-15 03:49:43.581736"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/6
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/amenities/6" for 127.0.0.1 at 2018-12-14 22:49:43 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 6]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 60ms (Views: 54.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:49:45 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (5.7ms)
+  Rendered amenities/new.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 56ms (Views: 53.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:49:52 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dZXvWRS45NCQ3a0UNJIMGDXo2g23g3+zc9HSYyhv2QEWeWK8YQ7pHx1x3/5iVbVZyMnj2fLHfe1rwgRBlUeqcg==", "amenity"=>{"name"=>"Spoons", "hall_name"=>"Leutner"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.6ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spoons"], ["hall_name", "Leutner"], ["created_at", "2018-12-15 03:49:52.708988"], ["updated_at", "2018-12-15 03:49:52.708988"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/7
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/amenities/7" for 127.0.0.1 at 2018-12-14 22:49:52 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 7]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:49:54 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-14 22:49:55 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.3ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 5]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 6]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 7]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 52ms (Views: 46.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/foods/new" for 127.0.0.1 at 2018-12-14 22:49:57 -0500
+Processing by FoodsController#new as HTML
+  Rendering foods/new.html.erb within layouts/application
+  Rendered foods/_form.html.erb (9.8ms)
+  Rendered foods/new.html.erb within layouts/application (13.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 57ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:49:58 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (5.8ms)
+  Rendered amenities/new.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 60ms (Views: 56.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:50:04 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tcP3AsX1VljDq5uOzi+GypJ2vpsaO4Z64bKFk5Lq42XWL3rnsENbl04H6WSY6D+Lb1eHT19/hCT5oVOxL8KQFg==", "amenity"=>{"name"=>"Knives", "hall_name"=>"Leutner"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.8ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Knives"], ["hall_name", "Leutner"], ["created_at", "2018-12-15 03:50:04.442717"], ["updated_at", "2018-12-15 03:50:04.442717"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/8
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/amenities/8" for 127.0.0.1 at 2018-12-14 22:50:04 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 8]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:50:05 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/halls/2" for 127.0.0.1 at 2018-12-14 22:50:06 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  Rendered halls/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 47ms (Views: 42.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:50:08 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (4.2ms)
+  Rendered amenities/new.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 58ms (Views: 51.0ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:50:13 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hpBP5RK/tCvzwWPFttLv/df6nV/xQHBahuzQe13YHW7lfMIAZwm55H5tES/gFVa8Ktuki7QEcgSe/wZZ4PBuHQ==", "amenity"=>{"name"=>"Chocolate Milk", "hall_name"=>"Fribley"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.7ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chocolate Milk"], ["hall_name", "Fribley"], ["created_at", "2018-12-15 03:50:13.926217"], ["updated_at", "2018-12-15 03:50:13.926217"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/9
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/amenities/9" for 127.0.0.1 at 2018-12-14 22:50:13 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 9]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 55ms (Views: 51.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:50:15 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (5.1ms)
+  Rendered amenities/new.html.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:50:19 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sdUp2n5+tHyW2CgHxm+ayJPe5zTLbfvdnkuBUVOW9bHSOaQ/C8i5sxt0Wu2QqCOJbv/e4I4p+YOGWFdz7r6Gwg==", "amenity"=>{"name"=>"Forks", "hall_name"=>"Fribley"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.4ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Forks"], ["hall_name", "Fribley"], ["created_at", "2018-12-15 03:50:19.645176"], ["updated_at", "2018-12-15 03:50:19.645176"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/10
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/amenities/10" for 127.0.0.1 at 2018-12-14 22:50:19 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.1ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 10]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 55ms (Views: 50.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:50:21 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (4.0ms)
+  Rendered amenities/new.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:50:51 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b+2MQeG/0aI3chIXmmhDl7eRbT7o1qBX7FH4MYJ99W0MAQGklAncbbreYP3Mr/rWSrBU6q2Sogn0Qi4TP1WGHg==", "amenity"=>{"name"=>"Spoons", "hall_name"=>"Fribley"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.5ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spoons"], ["hall_name", "Fribley"], ["created_at", "2018-12-15 03:50:51.285552"], ["updated_at", "2018-12-15 03:50:51.285552"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/11
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/amenities/11" for 127.0.0.1 at 2018-12-14 22:50:51 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 11]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:50:53 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/halls/2" for 127.0.0.1 at 2018-12-14 22:50:54 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.1ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 9]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 10]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 11]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/amenities/new" for 127.0.0.1 at 2018-12-14 22:50:55 -0500
+Processing by AmenitiesController#new as HTML
+  Rendering amenities/new.html.erb within layouts/application
+  Rendered amenities/_form.html.erb (5.2ms)
+  Rendered amenities/new.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 58ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/amenities" for 127.0.0.1 at 2018-12-14 22:51:02 -0500
+Processing by AmenitiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uHoH5UcevfZlTSQBOJIARfs4OirfYqX//wMVzq4P7aTblooAMqiwOejhVutuVbkEBhkD/pomp6HnEMPsEyee1w==", "amenity"=>{"name"=>"Knives", "hall_name"=>"Fribley"}, "commit"=>"Create Amenity"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[36mAmenity Create (0.6ms)[0m  [1m[32mINSERT INTO "amenities" ("name", "hall_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Knives"], ["hall_name", "Fribley"], ["created_at", "2018-12-15 03:51:02.035444"], ["updated_at", "2018-12-15 03:51:02.035444"]]
+  ↳ app/controllers/amenities_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/amenities_controller.rb:30
+Redirected to http://localhost:3000/amenities/12
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/amenities/12" for 127.0.0.1 at 2018-12-14 22:51:02 -0500
+Processing by AmenitiesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT  "amenities".* FROM "amenities" WHERE "amenities"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/amenities_controller.rb:67
+  Rendering amenities/show.html.erb within layouts/application
+  [1m[36mStatus Load (0.2ms)[0m  [1m[34mSELECT "statuses".* FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 12]]
+  ↳ app/views/amenities/show.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/amenities/show.html.erb:49
+  Rendered amenities/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 58ms (Views: 55.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:51:03 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/halls/2" for 127.0.0.1 at 2018-12-14 22:51:04 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.2ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 9]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 10]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 11]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 12]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 55ms (Views: 49.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/halls/1" for 127.0.0.1 at 2018-12-14 22:51:06 -0500
+Processing by HallsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHall Load (0.2ms)[0m  [1m[34mSELECT  "halls".* FROM "halls" WHERE "halls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/halls_controller.rb:67
+  Rendering halls/show.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/halls/show.html.erb:7
+  [1m[36mAmenity Load (0.1ms)[0m  [1m[34mSELECT "amenities".* FROM "amenities"[0m
+  ↳ app/views/halls/show.html.erb:34
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 5]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 6]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 7]]
+  ↳ app/views/halls/show.html.erb:44
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "statuses" WHERE "statuses"."amenity_id" = ?[0m  [["amenity_id", 8]]
+  ↳ app/views/halls/show.html.erb:44
+  Rendered halls/show.html.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:42
+Completed 200 OK in 52ms (Views: 46.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-14 22:51:17 -0500
+Processing by HallsController#index as HTML
+  Rendering halls/index.html.erb within layouts/application
+  [1m[36mHall Load (0.3ms)[0m  [1m[34mSELECT "halls".* FROM "halls"[0m
+  ↳ app/views/halls/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/halls/index.html.erb:13
+  Rendered halls/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 57ms (Views: 53.0ms | ActiveRecord: 0.6ms)
+
+
