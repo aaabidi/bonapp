@@ -100,6 +100,7 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
+    ffaker (2.10.0)
     ffi (1.9.25)
     formatador (0.2.5)
     globalid (0.4.1)
@@ -283,6 +284,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.5)
   factory_girl_rails
+  ffaker
   guard (~> 2.15)
   guard-livereload (~> 2.5, >= 2.5.2)
   jbuilder (~> 2.5)
