@@ -98,33 +98,33 @@ else:
 #Create A Json file for all of the meals at fribley
 for mealIndex, meal in fribleyMeals.items():
 
-    #Create Dictionary of foods
-    fribleyDict = {}
+    #Create list of foods
+    fribleyList = list()
 
-    #Move and format food items to dictionarys
+    #Move and format food items to list
     for x in range(len(meal)):
         food = meal[x].text.strip() #formats and removes white space
         food = re.sub('\[.*?\]', '', food) #removes farm information
         food = food.replace("\u00f1", "n") #fixes Nne character
-        fribleyDict[x] = food #add item to dictionary
+        fribleyList.append(food) #add item to list
 
-    #Dump dictionaries to json files
+    #Dump list to json files
     with open('fribley'+fribleyMealNames[mealIndex]+'.json', 'w') as fp:
-        json.dump(fribleyDict, fp, indent=4)
+        json.dump(fribleyList, fp, indent=4)
 
 #Create A Json file for all of the meals at leutner
 for mealIndex, meal in leutnerMeals.items():
 
-    #Create Dictionary of foods
-    leutnerDict = {}
+    #Create list of foods
+    leutnerList = list()
 
-    #Move and format food items to dictionarys
+    #Move and format food items to list
     for x in range(len(meal)):
         food = meal[x].text.strip() #formats and removes white space
         food = re.sub('\[.*?\]', '', food) #removes farm information
         food = food.replace("\u00f1", "n") #fixes Nne character
-        leutnerDict[x] = food #add item to dictionary
+        leutnerList.append(food) #add item to list
 
-    #Dump dictionaries to json files
+    #Dump list to json files
     with open('leutner'+leutnerMealNames[mealIndex]+'.json', 'w') as fp:
-        json.dump(leutnerDict, fp, indent=4)
+        json.dump(leutnerList, fp, indent=4)
